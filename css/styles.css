@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+height: 100vh;
+width: 100vw;
+margin: 0;
+font-family: 'Indie Flower', sans-serif;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+}
+.wrapper {
+  perspective: 1500px;
+  transition: all 1s ease-in-out;
+}
+.wrapper:hover {
+  transform: translateX(140px);
+}
+.flip {
+  width: 0;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+.flip:hover {
+  transform: rotateY(-180deg);
+}
+.front {
+  z-index: 2;
+  background-image: url('../gif/Mothers_Day_2020_Final.gif');
+  border: 1px solid #000;
+  backface-visibility: hidden;
+}
+.back {
+  border: 1px solid #000;
+  background-color: #fff;
+  z-index: 1;
+}
+.inside {
+  border: 1px solid #000;
+  z-index: -1;
+  border-left: none;
+}
+/* Text Styles*/
+.marker {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 1.8em;
+  color: #eb7b8b;
+}
+p {
+  margin: 10px 10px 0 20px;
+}
+.mid {
+  text-align: center;
+}
