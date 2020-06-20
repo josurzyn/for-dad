@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
 }
-html, body {
-height: 100vh;
-width: 100vw;
-margin: 0;
-font-family: 'Indie Flower', sans-serif;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: sans-serif;
 }
 .container {
   height: 100vh;
@@ -24,7 +25,7 @@ font-family: 'Indie Flower', sans-serif;
   perspective: 1500px;
   transition: all 1s ease-in-out;
 }
-.wrapper:hover {
+.wrapper-open {
   transform: translateX(140px);
 }
 .flip {
@@ -32,14 +33,18 @@ font-family: 'Indie Flower', sans-serif;
   transform-style: preserve-3d;
   transition: all 1s ease-in-out;
 }
-.flip:hover {
+
+.flip-open {
   transform: rotateY(-180deg);
 }
 .front {
   z-index: 2;
-  background-image: url('../gif/Mothers_Day_2020_Final.gif');
   border: 1px solid #000;
   backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .back {
   border: 1px solid #000;
@@ -50,16 +55,119 @@ font-family: 'Indie Flower', sans-serif;
   border: 1px solid #000;
   z-index: -1;
   border-left: none;
+  font-family: "Indie Flower", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* Text Styles*/
 .marker {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: "Permanent Marker", sans-serif;
   font-size: 1.8em;
-  color: #eb7b8b;
-}
-p {
-  margin: 10px 10px 0 20px;
+  color: #2b2b2b;
 }
 .mid {
+  padding: 10px 10px 0 20px;
   text-align: center;
+}
+
+/* Sudoku */
+.sudoku-container {
+  z-index: 200;
+  width: 348px;
+  height: 348px;
+  margin: 20px;
+  border: 3px solid #000;
+  display: grid;
+  grid-template-columns: repeat(9, 38px);
+  grid-template-rows: repeat(9, 38px);
+}
+
+.sudoku-container div:nth-child(n) {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.sudoku-container div:nth-child(3n) {
+  border-right: 2px solid #000;
+}
+
+.sudoku-container div:nth-child(9n) {
+  border-right: none;
+}
+
+.sudoku-container div:nth-child(n + 19) {
+  border-bottom: 2px solid #000;
+}
+
+.sudoku-container div:nth-child(n + 28) {
+  border-bottom: 1px solid grey;
+}
+
+.sudoku-container div:nth-child(n + 46) {
+  border-bottom: 2px solid #000;
+}
+
+.sudoku-container div:nth-child(n + 55) {
+  border-bottom: 1px solid grey;
+}
+
+.number-box {
+  z-index: 0;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  border: none;
+  width: 36px;
+  height: 36px;
+  z-index: 0;
+  font-family: "Indie Flower", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Hide number arrows */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Permanent Marker", sans-serif;
+}
+
+.controls {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.close-card {
+  margin: 25px;
+  align-self: flex-end;
 }

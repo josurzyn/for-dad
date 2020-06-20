@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker&display=swap" rel="stylesheet">
-    <title>Love you, Mum!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <title>Love you, Dad!</title>
   </head>
   <body>
-
     <main class="container">
-
       <div class="card wrapper">
-
         <div class="flip">
-
           <div class="card front">
+            <div class="sudoku-container"></div>
+            <div class="controls">
+              <button class="open-card" onclick="createSudoku()">
+                reset
+              </button>
+              <button class="open-card" onclick="openCard()">
+                open card
+              </button>
+            </div>
           </div>
 
-          <div class="card back">
-          </div>
-
+          <div class="card back"></div>
         </div>
 
         <div class="card inside">
-          <p>To Mum,</p>
-          <p class="marker mid">Happy Mother's Day!</p>
-          <p>Somehow we've found ourselves in a world full of curfews and closed borders, and it's hard not knowing when I can come and see you again. But I'm lucky that we also live in a world of Skype and video calls and free international messaging and although we're physically kind of far apart, we never have to be so far away.</p>
-          <p>I miss you and I'm looking forward to seeing you again, you're the best Mum a girl could have.</p>
-          <p>Stay safe and don't touch anyone apart from Dad.</p>
+          <p>To Dad,</p>
+          <p class="marker mid">Happy Father's Day!</p>
+          <p class="mid">
+            While this pesky pandemic keeps making it a little tricky to travel,
+            I thought this could maybe keep you out of trouble for a bit instead
+            :) You can type in all the empty boxes, just click and pop the
+            numbers in! It should also print okay if you prefer ;)
+          </p>
+          <p>I hope to see you in real life again soon</p>
           <p class="mid">Love you loads</p>
           <p class="mid">Jo</p>
           <p class="mid">xx</p>
+
+          <button class="close-card" onclick="closeCard()">
+            close
+          </button>
         </div>
-
       </div>
-
     </main>
-
+    <script src="sudoku.js"></script>
   </body>
 </html>
